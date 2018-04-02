@@ -211,6 +211,10 @@
     <Compile Include="Migrations\201804022104500_OverrideConventionsForEventsandTopics.Designer.cs">
       <DependentUpon>201804022104500_OverrideConventionsForEventsandTopics.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804022112216_PopulateTopicsTable.cs" />
+    <Compile Include="Migrations\201804022112216_PopulateTopicsTable.Designer.cs">
+      <DependentUpon>201804022112216_PopulateTopicsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -304,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804022104500_OverrideConventionsForEventsandTopics.resx">
       <DependentUpon>201804022104500_OverrideConventionsForEventsandTopics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804022112216_PopulateTopicsTable.resx">
+      <DependentUpon>201804022112216_PopulateTopicsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
