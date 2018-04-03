@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNet.Identity;
-using System;
 using System.Linq;
 using System.Web.Mvc;
 using TedEx.Models;
@@ -35,7 +34,7 @@ namespace TedEx.Controllers
             {
                 SpeakerId = User.Identity.GetUserId(),
                 TopicId = viewModel.Topic,
-                DateTime = DateTime.Parse(String.Format("{0} {1}", viewModel.Date, viewModel.Time)),
+                DateTime = viewModel.DateTime,
                 Venue = viewModel.Venue
             };
 

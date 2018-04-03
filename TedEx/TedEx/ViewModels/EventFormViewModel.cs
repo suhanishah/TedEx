@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TedEx.Models;
 
 namespace TedEx.ViewModels
@@ -10,5 +11,11 @@ namespace TedEx.ViewModels
         public string Time { get; set; }
         public byte Topic { get; set; }
         public IEnumerable<Topic> Topics { get; set; }
+
+        public DateTime DateTime
+        {
+            get
+            { return DateTime.Parse(String.Format("{0} {1}", Date, Time)); }
+        }
     }
 }
