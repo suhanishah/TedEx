@@ -1,0 +1,29 @@
+﻿@model TedEx.ViewModels.EventFormViewModel
+    @{
+        ViewBag.Title = "Create";
+
+    }
+
+    <h2>Create an Event</h2>
+
+
+    <form>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Venue)
+            @Html.TextAreaFor(m => m.Venue, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Date)
+            @Html.TextAreaFor(m => m.Date, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Time)
+            @Html.TextAreaFor(m => m.Time, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m=>m.Topic)
+            @Html.DropDownListFor(m=>m.Topic,new SelectList(Model.Topics, "Id", "Name"),"", new {@class="form-control"}) @*new SelectList(Source, will take value from, Name property for labels)*@
+        </div>
+        <button type="submit" value="Save" class="btn btn-primary"> SAVE</button>
+    </form>
