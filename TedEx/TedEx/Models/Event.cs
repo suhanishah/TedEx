@@ -7,8 +7,10 @@ namespace TedEx.Models
     {
         public int Id { get; set; }
 
-        [Required]
         public ApplicationUser Speaker { get; set; }
+
+        [Required]
+        public string SpeakerId { get; set; }
 
         public DateTime DateTime { get; set; }
 
@@ -16,7 +18,10 @@ namespace TedEx.Models
         [StringLength(255)]
         public string Venue { get; set; }
 
-        [Required]
         public Topic Topic { get; set; }
+
+        [Required]
+        public byte TopicId { get; set; }
+
     }
 }
