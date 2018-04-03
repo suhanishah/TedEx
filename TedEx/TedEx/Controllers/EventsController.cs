@@ -28,7 +28,7 @@ namespace TedEx.Controllers
 
         [Authorize]
         [HttpPost]
-
+        [ValidateAntiForgeryToken]
         public ActionResult Create(EventFormViewModel viewModel)
         {
             if (!ModelState.IsValid)
