@@ -28,13 +28,22 @@ namespace TedEx.Controllers
 
         [Authorize]
         [HttpPost]
+
         public ActionResult Create(EventFormViewModel viewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                viewModel.Topics = _context.Topics.ToList();
+                return View("Create", viewModel); // Create View, viewModel - so that
+                //all values will be in there with validation messages
+            }
+
+
             var event1 = new Event()
             {
                 SpeakerId = User.Identity.GetUserId(),
                 TopicId = viewModel.Topic,
-                DateTime = viewModel.DateTime,
+                DateTime = viewModel.GetDateTime(),
                 Venue = viewModel.Venue
             };
 
