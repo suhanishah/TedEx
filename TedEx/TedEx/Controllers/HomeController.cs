@@ -18,6 +18,7 @@ namespace TedEx.Controllers
         {
             var upcomingEvents = _context.Events
                 .Include(e => e.Speaker)
+                .Include(e => e.Topic)
                 .Where(e => e.DateTime > DateTime.Now);
             return View(upcomingEvents);
         }

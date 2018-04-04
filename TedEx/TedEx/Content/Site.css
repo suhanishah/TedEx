@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 90px;
     padding-bottom: 20px;
 }
 
@@ -22,7 +22,7 @@ select,
 textarea {
     max-width: 280px;
 }
-span.field-validation-error {
+field-validation-error {
     color: red;
     font-weight: bold;
 }
@@ -106,3 +106,48 @@ h1, h2, h3 {
     border-top-color: #ffffff;
     border-bottom-color: #ffffff;
 }
+/*Page-level overrides*/
+
+
+.events > li {
+    position: relative;
+    margin-bottom: 40px;
+    list-style: none;
+}
+.events > li .details {
+    position: absolute;
+    top: 0;
+    left: 70px;
+}
+
+.events > li .date {
+    background: red;
+    color: white;
+    width: 60px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.events > li .date .month {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 6px;
+}
+
+.events >li .date .day {
+    background: aliceblue;
+    color: grey;
+    border-radius: 0 0 7px 7px;
+    padding: 4px;
+}
+
+.events >li .details .speakerName {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.events > li .details .topicName {
+    font-size: 12px;
+    }
