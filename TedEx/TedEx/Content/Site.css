@@ -22,3 +22,83 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*Override bootstrap files*/
+body {
+    font-size: 17px;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family:Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+h1, h2, h3 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+.navbar-inverse {
+    background-color: #ff4342;
+    border-color: #ff4342;
+}
+
+.navbar-inverse .navbar-nav > li > a,
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+
+    .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+        background-color: #ff4342;
+        background-color: rgba(205, 40, 39, 0.55);
+        
+    }
+
+.navbar-brand {
+    padding: 24px 15px;
+    font-size: 30px;
+    font-weight:bold
+}
+
+.form-control {
+    border-radius: 9px;
+    font-size: 17px;
+}
+    .form-control:focus {
+        box-shadow: none;
+        border-color: #428bca
+    }
+
+.btn {
+    border-radius: 9px;
+    padding: 7px 20px;
+    font-size: 17px;
+
+}
+
+.dropdown-menu {
+    box-shadow: none
+}
+
+.navbar-nav > li > a {
+    padding-top: 24px; padding-bottom: 7px;
+}
+
+.navbar-inverse .navbar-nav > .dropdown > a .caret {
+    border-top-color: #ffffff;
+    border-bottom-color: #ffffff;
+}
