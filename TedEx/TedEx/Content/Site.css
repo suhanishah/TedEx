@@ -22,6 +22,10 @@ select,
 textarea {
     max-width: 280px;
 }
+span.field-validation-error {
+    color: red;
+    font-weight: bold;
+}
 
 /*Override bootstrap files*/
 body {
@@ -69,14 +73,14 @@ h1, h2, h3 {
     }
 
 .navbar-brand {
-    padding: 24px 15px;
-    font-size: 30px;
+    font-size: 25px;
     font-weight:bold
 }
 
 .form-control {
     border-radius: 9px;
     font-size: 17px;
+    height: 60px;
 }
     .form-control:focus {
         box-shadow: none;
@@ -94,9 +98,9 @@ h1, h2, h3 {
     box-shadow: none
 }
 
-.navbar-nav > li > a {
+/*.navbar-nav > li > a {
     padding-top: 24px; padding-bottom: 7px;
-}
+}*/
 
 .navbar-inverse .navbar-nav > .dropdown > a .caret {
     border-top-color: #ffffff;
