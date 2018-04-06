@@ -3,6 +3,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using TedEx.Models;
+using TedEx.ViewModels;
 
 namespace TedEx.Controllers
 {
@@ -20,7 +21,14 @@ namespace TedEx.Controllers
                 .Include(e => e.Speaker)
                 .Include(e => e.Topic)
                 .Where(e => e.DateTime > DateTime.Now);
-            return View(upcomingEvents);
+
+            var viewModel = new HomeViewModel()
+            {
+                UpcomingEvents = upcomingEvents,
+                ShowAuthentication = User.Identity.IsAuthenticated,
+                Heading = "Upcoming Events"
+            };
+            return View("Events", viewModel);
         }
 
         public ActionResult About()

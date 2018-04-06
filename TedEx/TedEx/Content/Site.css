@@ -89,8 +89,8 @@ h1, h2, h3 {
 
 .btn {
     border-radius: 9px;
-    padding: 7px 20px;
-    font-size: 17px;
+    /*padding: 7px 20px;
+    font-size: 17px;*/
 
 }
 
@@ -118,6 +118,7 @@ h1, h2, h3 {
     position: absolute;
     top: 0;
     left: 70px;
+
 }
 
 .events > li .date {
@@ -131,14 +132,13 @@ h1, h2, h3 {
 .events > li .date .month {
     text-transform: uppercase;
     font-weight: bold;
-    padding: 6px;
+    padding: 4px;
 }
 
 .events >li .date .day {
     background: aliceblue;
     color: grey;
-    border-radius: 0 0 7px 7px;
-    padding: 4px;
+    padding: 10px;
 }
 
 .events >li .details .speakerName {

@@ -1,0 +1,66 @@
+﻿@model TedEx.ViewModels.HomeViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+<h2>@Model.Heading</h2>
+<ul class="events">
+
+    @foreach (var event1 in Model.UpcomingEvents)
+    {
+        <li>
+            <div class="date">
+                <div class="month">@event1.DateTime.ToString("MMM")</div>
+                <div class="day">@event1.DateTime.ToString("d ")</div>
+            </div>
+            <div class="details">
+                <div class="speakerName">
+                    @event1.Speaker.Name
+                    @if (Model.ShowAuthentication)
+                    {
+                        <button date-user-id="@event1.SpeakerId" class="btn btn-link btn-sm pull-right js-toggle-following">Follow</button>
+                    }
+                </div>
+
+                <div class="topicName">
+                    @event1.Topic.Name
+                </div>
+                @if (Model.ShowAuthentication)
+                {
+                    <button data-events1-id="@event1.Id" class="btn btn-default btn-sm pull-right js-toggle-attendance">Going?</button>
+                }
+
+            </div>
+        </li>
+    }
+</ul>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $(".js-toggle-attendance").click(function (e) {
+                var goingbutton = $(e.target);
+                $.post("/api/attendances", { eventId: goingbutton.attr("data-events1-id") })
+                    .done(function () {
+                        goingbutton
+                            .removeClass("btn-default")
+                            .addClass("btn-info")
+                            .text("Going");
+                    })
+                    .fail(function () {
+                        alert("Something Failed");
+                    });
+            });
+
+            $(".js-toggle-following").click(function (e) {
+                var followButton = $(e.target);
+                $.post("/api/followings", { followeeId: followButton.attr("data-user-id") })
+                    .done(function () {
+                        followButton.text("Following");
+                    })
+                    .fail(function () {
+                        alert("Something Failed");
+                    });
+            });
+        });
+    </script>
+}
